@@ -545,13 +545,10 @@ PEOPLE.push({id: "leb-hicom", name: "LEB High Command", division: "leb", list: [
   ["VACANT", "Supervisor", "Sergeant Major", "e9b"]
 ]});
 const SHORT_NAMES = {Bardamcz: "Bardam", gendermaleehrh: "Gender", KUNALNG6: "Kunal", unicorn34568996: "Unicorn"};
-function WithArticle(position) { return (/^[AEIOU]/.test(position) ? "an " : "a ") + position; }
+const BIO_PLACES = {mps: " at Military Police School", leb: " of LEB", srt: " of SRT"};
 function DefaultBio(name, role, rank, history, division) {
   if (!history || !history.length) return "";
-  const [joinedDate, , , joinedPosition] = history[0];
-  const place = division === "mps" ? "at Military Police School" : "in the Military Police";
-  const opening = `${rank} ${SHORT_NAMES[name] || name} has served ${place} since ${joinedDate} as ${WithArticle(joinedPosition)}`;
-  return joinedPosition === role ? opening + "." : `${opening}, and currently serves as ${WithArticle(role.replace(", ", " and "))}.`;
+  return `${rank} ${SHORT_NAMES[name] || name} is currently serving as the ${role.replace(", ", " and ")}${BIO_PLACES[division] || ""}.`;
 }
 const VIEWS = Object.fromEntries(PEOPLE.map((group) => [group.id, {title: group.name, lede: "The members of " + group.name + ".", groups: [group.id]}]));
 const JOIN_VIEWS = {
