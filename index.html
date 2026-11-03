@@ -395,7 +395,6 @@ nav a{font-size:1.15rem}
 <a href="#/" data-route="home">Home</a>
 <a href="#/news" data-route="news">News</a>
 <div class="has-menu"><a href="#/join" data-route="join">Join<span class="caret" aria-hidden="true"></span></a><ul class="menu" id="joinMenu"></ul></div>
-<a href="#/ranks" data-route="ranks" id="ranksLink">Ranks</a>
 <div class="has-menu"><a href="#/leadership" data-route="leadership">Leadership<span class="caret" aria-hidden="true"></span></a><ul class="menu" id="leadMenu"></ul></div>
 </nav>
 </div>
@@ -685,7 +684,7 @@ function FillTicker() {
   RemeasureTicker();
 }
 const BIO_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h9l5 5v15H5z"/><path d="M13 2v6h6" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8 12h8M8 16h8" stroke="#fff" stroke-width="1.5"/></svg>`;
-const HERO_ROUTES = ["home", "news", "join", "ranks", "leadership"];
+const HERO_ROUTES = ["home", "news", "join", "leadership"];
 function HeroConfig(route) {
   const unit = CURRENT.name;
   const table = {
@@ -727,7 +726,6 @@ function ApplyDivision() {
   document.getElementById("motto").hidden = !CURRENT.motto;
   document.querySelector('meta[name="theme-color"]').content = CURRENT.accent.scarlet;
   document.getElementById("divBar").innerHTML = DivBarHtml();
-  document.getElementById("ranksLink").hidden = CURRENT.id !== "mp";
   document.getElementById("leadMenu").innerHTML = MenuHtml();
   document.getElementById("joinMenu").innerHTML = JoinMenuHtml();
   FillTicker();
@@ -933,7 +931,7 @@ function ShowPage() {
   const person = parts[0] === "leadership" && parts[1] === "profile" && parts[2] ? FindPerson(decodeURIComponent(parts[2])) : null;
   const ownerDivision = (article || application || {}).division || (person && person.group.division !== "hq" ? person.group.division : null);
   if (!hashDivision && ownerDivision && CURRENT.id !== "mp" && CURRENT.id !== ownerDivision) CURRENT = DIVISIONS[ownerDivision];
-  const route = person ? "profile" : article || application ? "article" : (HERO_ROUTES.includes(parts[0]) && !(parts[0] === "ranks" && CURRENT.id !== "mp") ? parts[0] : "home");
+  const route = person ? "profile" : article || application ? "article" : (HERO_ROUTES.includes(parts[0]) ? parts[0] : "home");
   const navRoute = article ? "news" : application ? "join" : person ? "leadership" : route;
   const hero = document.getElementById("hero");
   const opened = article || application;
