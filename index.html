@@ -3,15 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link id="favicon" rel="icon" type="image/png" href="assets/logo-mp.png">
+<link id="favicon" rel="icon" type="image/png" href="assets/icon-mp.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <title>Military Police</title>
 <meta property="og:site_name" content="Military Police">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Military Police">
 <meta property="og:description" content="The Military Police protect the security of the Marine Barracks through Military Police School, the Law Enforcement Battalion and the Special Reactions Team.">
-<meta property="og:url" content="https://65vi9.github.io/Military-Police-School-Web/">
-<meta property="og:image" content="https://65vi9.github.io/Military-Police-School-Web/assets/og-image.jpg">
+<meta property="og:url" content="https://65vi9.github.io/Military-Police-Website/">
+<meta property="og:image" content="https://65vi9.github.io/Military-Police-Website/assets/og-mp.jpg">
+<meta property="og:image:width" content="1500">
+<meta property="og:image:height" content="600">
+<meta name="twitter:image" content="https://65vi9.github.io/Military-Police-Website/assets/og-mp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#c8102e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -495,25 +498,25 @@ let ARTICLES = [];
 let APPLICATIONS = [];
 const BASE_ACCENT = {scarlet: "#c8102e", maroon: "#7a0c1b", tint: "#fcf4f4", line: "#e9d3d6", menu: "#a00c20"};
 const DIVISIONS = {
-  mp: {id: "mp", label: "MP", short: "MP", name: "Military Police", heroTitle: "Military Police", logo: "assets/logo-mp.png", motto: "", accent: BASE_ACCENT,
+  mp: {id: "mp", label: "MP", short: "MP", name: "Military Police", heroTitle: "Military Police", logo: "assets/logo-mp.png", icon: "assets/icon-mp.png", motto: "", accent: BASE_ACCENT,
     lede: "Protecting the security of the Marine Barracks.",
     aboutTitle: "About the Military Police",
     about: "The Military Police are responsible for protecting the security of the Marine Barracks. Military Police School, the Law Enforcement Battalion and the Special Reactions Team work together to form one security system for the Barracks.",
     points: [["Security", "Protect the Marine Barracks."], ["Coordination", "Every division works together as one system."], ["Recruitment", "Join through Tryouts or Applications."], ["Chain of Command", "Headquarters and the High Command of each division."]]},
-  mps: {id: "mps", label: "MPS", short: "MPS", name: "Military Police School", heroTitle: "Military Police School", logo: "assets/logo.png", motto: "", accent: BASE_ACCENT,
+  mps: {id: "mps", label: "MPS", short: "MPS", name: "Military Police School", heroTitle: "Military Police School", logo: "assets/logo.png", icon: "assets/logo.png", motto: "", accent: BASE_ACCENT,
     lede: "Responsible for the recruitment and competence of future graduates of the Military Police program.",
     summary: "Responsible for the recruitment and competence of future graduates of the Military Police program.",
     aboutTitle: "About the school",
     about: "Military Police School recruits new members and makes sure the future graduates of its program are competent. The people who teach here build their own skills in four areas.",
     points: [["Leadership", "Lead candidates and fellow instructors."], ["Discipline", "Hold yourself and others to the standard."], ["Community", "Engage with the wider Military Police community."], ["Teamwork", "Work as one staff toward one mission."]]},
-  leb: {id: "leb", label: "LEB", short: "LEB", name: "Law Enforcement Battalion", heroTitle: "Law Enforcement Battalion", logo: "assets/logo-leb.png", motto: "",
+  leb: {id: "leb", label: "LEB", short: "LEB", name: "Law Enforcement Battalion", heroTitle: "Law Enforcement Battalion", logo: "assets/logo-leb.png", icon: "assets/icon-leb.png", motto: "",
     accent: {scarlet: "#2f7d1a", maroon: "#1b4a10", tint: "#f3f8ee", line: "#d3e2cb", menu: "#276615"},
     lede: "Responsible for base security and protection.",
     summary: "Responsible for base security and protection. Divided into three battalions that maintain order, secure entry points and handle disturbances.",
     aboutTitle: "About the battalion",
     about: "The Law Enforcement Battalions are responsible for base security and protection. Divided into three battalions, they maintain order, secure entry points, and handle disturbances to ensure safety and peace across the base.",
     points: [["Maintain Order", "Keep order across the base."], ["Secure Entry Points", "Control who comes in and out."], ["Handle Disturbances", "Respond to incidents on the base."], ["Three Battalions", "One division, three battalions."]]},
-  srt: {id: "srt", label: "SRT", short: "SRT", name: "Special Reactions Team", heroTitle: "Special Reactions Team", logo: "assets/logo-srt.png", motto: "",
+  srt: {id: "srt", label: "SRT", short: "SRT", name: "Special Reactions Team", heroTitle: "Special Reactions Team", logo: "assets/logo-srt.png", icon: "assets/icon-srt.png", motto: "",
     accent: {scarlet: "#0f6b45", maroon: "#08402a", tint: "#eef6f2", line: "#cbe0d6", menu: "#0b5538"},
     lede: "Responding to high-priority in-game and foreign situations.",
     summary: "Responds to high-priority in-game and foreign situations. Organized into three specialized squadrons.",
@@ -716,7 +719,7 @@ function ApplyDivision() {
   document.getElementById("brandLogo").src = CURRENT.logo;
   document.getElementById("brandLogo").alt = CURRENT.name + " seal";
   document.getElementById("footLogo").src = CURRENT.logo;
-  document.getElementById("favicon").href = CURRENT.logo;
+  document.getElementById("favicon").href = CURRENT.icon;
   document.getElementById("brandName").textContent = CURRENT.name;
   document.getElementById("footName").textContent = CURRENT.name;
   document.getElementById("footMotto").textContent = CURRENT.motto;
