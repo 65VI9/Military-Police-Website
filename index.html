@@ -531,7 +531,7 @@ const PEOPLE = [
   {id: "head-instructors", name: "Middle Command: Head Instructors", division: "mps", hidden: true, list: [["gendermaleehrh", "Head Instructor", "Lieutenant Colonel", "o5", "", [["September 9, 2026", "First Lieutenant", "o2", "Instructor"], ["September 22, 2026", "Captain", "o3", "Senior Instructor"], ["September 28, 2026", "Major", "o4", "Lead Instructor"], ["October 8, 2026", "Lieutenant Colonel", "o5", "Head Instructor"]], "Learning never stops even when old"], ["Bardamcz", "Head Instructor", "Lieutenant Colonel", "o5", "", [["September 22, 2026", "Staff Sergeant", "e6", "Senior Instructor"], ["September 28, 2026", "Major", "o4", "Lead Instructor"], ["October 8, 2026", "Lieutenant Colonel", "o5", "Head Instructor"]], "By example we shall lead."], ["unicorn34568996", "Head Instructor", "Lieutenant Colonel", "o5", "", [["October 11, 2026", "Major", "o4", "Lead Instructor"], ["October 26, 2026", "Lieutenant Colonel", "o5", "Head Instructor"]]]]}
 ];
 const PORTRAIT_FILES = {MikeVicious: "mike0w73"};
-const PORTRAIT_NAMES = new Set(["GemGameSin", "MackFoolish", "Firefighter8331", "MikeVicious", "X_AgsFang", "AnthonyUnbeatable", "65VI9", "Policeswat8934dudess", "KUNALNG6", "gendermaleehrh", "Bardamcz", "unicorn34568996"]);
+const PORTRAIT_NAMES = new Set(["GemGameSin", "MackFoolish", "Firefighter8331", "MikeVicious", "X_AgsFang", "AnthonyUnbeatable", "65VI9", "Policeswat8934dudess", "KUNALNG6", "gendermaleehrh", "Bardamcz", "unicorn34568996", "Thecoolmarie874", "ohprotect"]);
 PEOPLE.unshift({id: "headquarters", name: "Headquarters", division: "hq", list: [
   ["GemGameSin", "Provost Marshal General", "General", "o10", "", [["October 19, 2026", "General", "o10", "Provost Marshal General"]]],
   ["Firefighter8331", "Deputy Provost Marshal General", "Lieutenant General", "o9", "", [["May 2, 2026", "Sergeant Major", "e9b", "Divisional Sergeant Major of LEB"], ["May 25, 2026", "Brigadier General", "o7", "Executive Officer of LEB"], ["August 14, 2026", "Major General", "o8", "Commanding Officer of LEB"], ["August 31, 2026", "Lieutenant General", "o9", "Deputy Provost Marshal General"]]],
@@ -540,10 +540,10 @@ PEOPLE.unshift({id: "headquarters", name: "Headquarters", division: "hq", list: 
 PEOPLE.push({id: "leb-hicom", name: "LEB High Command", division: "leb", list: [
   ["Thecoolmarie874", "Commanding Officer", "Major General", "o8", "", [["January 13, 2026", "Master Sergeant", "e8a", "Junior Patrol Man"], ["January 19, 2026", "First Lieutenant", "o2", "Battalion Instructor"], ["April 6, 2026", "Lieutenant Colonel", "o5", "Battalion Senior Enlisted Advisor"], ["April 27, 2026", "Colonel", "o6", "Battalion Commanding Officer"], ["May 28, 2026", "Sergeant Major", "e9b", "Divisional Sergeant Major of LEB"], ["August 14, 2026", "Brigadier General", "o7", "Executive Officer of LEB"], ["September 16, 2026", "Major General", "o8", "Commanding Officer of LEB"]]],
   ["VACANT", "Executive Officer", "Brigadier General", "o7"],
-  ["Quavyx77", "Divisional Sergeant Major", "Sergeant Major", "e9b", "", [["September 28, 2026", "Brigadier General", "o7", "Trial Executive Officer of LEB"], ["October 16, 2026", "Sergeant Major", "e9b", "Divisional Sergeant Major of LEB"]]]
+  ["VACANT", "Divisional Sergeant Major", "Sergeant Major", "e9b"]
 ]}, {id: "srt-hicom", name: "SRT High Command", division: "srt", list: [
   ["ohprotect", "Director", "Major General", "o8", "", [["October 22, 2026", "Brigadier General", "o7", "Deputy Director of SRT"], ["October 29, 2026", "Major General", "o8", "Director of SRT"]]],
-  ["44Operations", "Deputy Director", "Brigadier General", "o7", "", [["October 21, 2026", "Sergeant Major", "e9b", "Supervisor of SRT"], ["October 29, 2026", "Brigadier General", "o7", "Deputy Director of SRT"]]],
+  ["VACANT", "Deputy Director", "Brigadier General", "o7"],
   ["VACANT", "Supervisor", "Sergeant Major", "e9b"]
 ]});
 const SHORT_NAMES = {Bardamcz: "Bardam", gendermaleehrh: "Gender", KUNALNG6: "Kunal", unicorn34568996: "Unicorn"};
@@ -660,7 +660,6 @@ const TICKERS = {
   leb: [
     "Join the Law Enforcement Battalion through Tryouts or Applications.",
     TickerLine("Thecoolmarie874", "is the Commanding Officer of the Law Enforcement Battalion."),
-    TickerLine("Quavyx77", "serves as the Divisional Sergeant Major of the Law Enforcement Battalion."),
     "The Law Enforcement Battalions are responsible for base security and protection.",
     "Three battalions maintain order, secure entry points and handle disturbances across the base.",
     ...JOIN_LINES
@@ -668,7 +667,6 @@ const TICKERS = {
   srt: [
     "Join the Special Reactions Team through Tryouts or Applications.",
     TickerLine("ohprotect", "is the Director of the Special Reactions Team."),
-    TickerLine("44Operations", "serves as the Deputy Director of the Special Reactions Team."),
     "The Special Reactions Team responds to high-priority in-game and foreign situations.",
     "Three specialized squadrons make sure threats are handled effectively and professionally.",
     ...JOIN_LINES
